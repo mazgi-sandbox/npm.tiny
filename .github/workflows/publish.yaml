@@ -38,7 +38,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@mazgi-sandbox"
       - run: |
-          cat package.json | jq '.name="npm.tiny"' > package.gpr.json
+          cat package.json | jq '.name="@mazgi-sandbox/npm.tiny"' > package.gpr.json
           mv package.gpr.json package.json
       - run: |
           cat package.json | jq '.publishConfig.registry="https://npm.pkg.github.com/"' > package.gpr.json

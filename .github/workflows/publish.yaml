@@ -37,6 +37,12 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: "@mazgi-sandbox"
+      - run: |
+          cat package.json | jq '.name="npm.tiny"' > package.gpr.json
+          mv package.gpr.json package.json
+      - run: |
+          cat package.json | jq '.publishConfig.registry="example.com"' > package.gpr.json
+          mv package.gpr.json package.json
       - run: npm install --global can-npm-publish
       - run: can-npm-publish && npm publish --access public || true
         env:

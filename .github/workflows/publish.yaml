@@ -23,10 +23,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm install --global can-npm-publish
-      - run: npm publish
+      - run: can-npm-publish && npm publish --access public || true
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-        if: can-npm-publish
 
   publish-gpr:
     needs: build
@@ -39,7 +38,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@mazgi-sandbox"
       - run: npm install --global can-npm-publish
-      - run: npm publish
+      - run: can-npm-publish && npm publish --access public || true
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        if: can-npm-publish

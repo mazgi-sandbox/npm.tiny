@@ -2,6 +2,9 @@
   "name": "@mazgi-sandbox/tiny",
   "version": "0.0.3",
   "license": "MIT",
+  "keywords": [
+    "practice"
+  ],
   "homepage": "https://github.com/mazgi-sandbox/npm.tiny",
   "bugs": {
     "url": "https://github.com/mazgi-sandbox/npm.tiny/issues/new?labels=bug"
